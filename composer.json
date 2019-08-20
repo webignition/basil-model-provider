@@ -32,7 +32,9 @@
         ]
     },
     "require": {
-        "php": ">=7.2"
+        "php": ">=7.2",
+        "webignition/php-basil-models": ">=0.59,<1",
+        "webignition/php-basil-context-aware-exception": ">=0.1,<1"
     },
     "require-dev": {
         "phpunit/phpunit": "~8.0",
