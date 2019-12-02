@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace webignition\BasilModelProvider\Tests\Unit\Exception;
 
 use webignition\BasilModelProvider\Exception\UnknownStepException;

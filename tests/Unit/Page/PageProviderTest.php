@@ -1,6 +1,6 @@
 <?php
-/** @noinspection PhpUnhandledExceptionInspection */
-/** @noinspection PhpDocSignatureInspection */
+
+declare(strict_types=1);
 
 namespace webignition\BasilModelProvider\Tests\Unit\Page;
 
@@ -9,7 +9,6 @@ use webignition\BasilModel\Identifier\IdentifierCollection;
 use webignition\BasilModel\Page\Page;
 use webignition\BasilModel\Step\Step;
 use webignition\BasilModelProvider\Exception\UnknownPageException;
-use webignition\BasilModelProvider\Exception\UnknownStepException;
 use webignition\BasilModelProvider\Page\PageProvider;
 use webignition\BasilModelProvider\Page\PageProviderInterface;
 

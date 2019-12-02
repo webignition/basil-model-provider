@@ -1,5 +1,6 @@
 <?php
-/** @noinspection PhpUnhandledExceptionInspection */
+
+declare(strict_types=1);
 
 namespace webignition\BasilModelProvider\Tests\Unit\DataSet;
 
