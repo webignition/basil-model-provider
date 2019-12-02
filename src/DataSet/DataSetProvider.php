@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace webignition\BasilModelProvider\DataSet;
 
-use webignition\BasilModel\DataSet\DataSetCollectionInterface;
 use webignition\BasilModelProvider\Exception\UnknownDataProviderException;
+use webignition\BasilModels\DataSet\DataSetCollectionInterface;
 
 class DataSetProvider implements DataSetProviderInterface
 {

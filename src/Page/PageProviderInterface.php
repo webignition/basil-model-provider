@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace webignition\BasilModelProvider\Page;
 
-use webignition\BasilModel\Page\PageInterface;
 use webignition\BasilModelProvider\Exception\UnknownPageException;
+use webignition\BasilModels\Page\PageInterface;
 
 interface PageProviderInterface
 {

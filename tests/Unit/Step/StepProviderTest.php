@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace webignition\BasilModelProvider\Tests\Unit\Step;
 
-use webignition\BasilModel\Step\Step;
 use webignition\BasilModelProvider\Exception\UnknownStepException;
 use webignition\BasilModelProvider\Step\StepProvider;
 use webignition\BasilModelProvider\Step\StepProviderInterface;
+use webignition\BasilModels\Step\Step;
 
 class StepProviderTest extends \PHPUnit\Framework\TestCase
 {

@@ -4,11 +4,10 @@ declare(strict_types=1);
 
 namespace webignition\BasilModelProvider\Tests\Unit\DataSet;
 
-use webignition\BasilModel\DataSet\DataSet;
-use webignition\BasilModel\DataSet\DataSetCollection;
 use webignition\BasilModelProvider\DataSet\DataSetProvider;
 use webignition\BasilModelProvider\DataSet\DataSetProviderInterface;
 use webignition\BasilModelProvider\Exception\UnknownDataProviderException;
+use webignition\BasilModels\DataSet\DataSetCollection;
 
 class DataSetProviderTest extends \PHPUnit\Framework\TestCase
 {
@@ -38,26 +37,26 @@ class DataSetProviderTest extends \PHPUnit\Framework\TestCase
             'valid data set collections' => [
                 'dataSetCollections' => [
                     'data_set_collection_1' => new DataSetCollection([
-                        new DataSet('0', [
+                        '0' => [
                             'foo' => 'bar',
-                        ]),
+                        ],
                     ]),
                     'data_set_collection_2' => new DataSetCollection([
-                        new DataSet('name', [
+                        'name' => [
                             'fizz' => 'buzz',
-                        ]),
+                        ],
                     ]),
                 ],
                 'expectedDataSetProvider' => new DataSetProvider([
                     'data_set_collection_1' => new DataSetCollection([
-                        new DataSet('0', [
+                        '0' => [
                             'foo' => 'bar',
-                        ]),
+                        ],
                     ]),
                     'data_set_collection_2' => new DataSetCollection([
-                        new DataSet('name', [
+                        'name' => [
                             'fizz' => 'buzz',
-                        ]),
+                        ],
                     ]),
                 ]),
             ],
@@ -67,7 +66,7 @@ class DataSetProviderTest extends \PHPUnit\Framework\TestCase
     public function testFindDataSetCollection()
     {
         $importName = 'data_provider_import_name';
-        $dataSetCollection = new DataSetCollection();
+        $dataSetCollection = new DataSetCollection([]);
 
         $dataSetProvider = new DataSetProvider([
             $importName => $dataSetCollection,
