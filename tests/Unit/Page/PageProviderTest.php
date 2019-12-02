@@ -4,13 +4,11 @@ declare(strict_types=1);
 
 namespace webignition\BasilModelProvider\Tests\Unit\Page;
 
-use Nyholm\Psr7\Uri;
-use webignition\BasilModel\Identifier\IdentifierCollection;
-use webignition\BasilModel\Page\Page;
-use webignition\BasilModel\Step\Step;
 use webignition\BasilModelProvider\Exception\UnknownPageException;
 use webignition\BasilModelProvider\Page\PageProvider;
 use webignition\BasilModelProvider\Page\PageProviderInterface;
+use webignition\BasilModels\Page\Page;
+use webignition\BasilModels\Step\Step;
 
 class PageProviderTest extends \PHPUnit\Framework\TestCase
 {
@@ -53,10 +51,7 @@ class PageProviderTest extends \PHPUnit\Framework\TestCase
     public function testFindPage()
     {
         $importName = 'page_import_name';
-        $page = new Page(
-            new Uri('http://example.com'),
-            new IdentifierCollection()
-        );
+        $page = new Page('http://example.com');
 
         $pageProvider = new PageProvider([
             $importName => $page,
