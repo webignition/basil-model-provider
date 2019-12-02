@@ -68,11 +68,11 @@ class DataSetProviderTest extends \PHPUnit\Framework\TestCase
         $importName = 'data_provider_import_name';
         $dataSetCollection = new DataSetCollection([]);
 
-        $dataSetProvider = new DataSetProvider([
+        $provider = new DataSetProvider([
             $importName => $dataSetCollection,
         ]);
 
-        $this->assertSame($dataSetCollection, $dataSetProvider->findDataSetCollection($importName));
+        $this->assertSame($dataSetCollection, $provider->findDataSetCollection($importName));
     }
 
     public function testFindDataSetCollectionThrowsUnknownDataProviderException()
@@ -80,7 +80,7 @@ class DataSetProviderTest extends \PHPUnit\Framework\TestCase
         $this->expectException(UnknownDataProviderException::class);
         $this->expectExceptionMessage('Unknown data provider "data_provider_import_name"');
 
-        $dataSetProvider = new DataSetProvider([]);
-        $dataSetProvider->findDataSetCollection('data_provider_import_name');
+        $provider = new DataSetProvider([]);
+        $provider->findDataSetCollection('data_provider_import_name');
     }
 }

@@ -14,7 +14,7 @@ class EmptyStepProviderTest extends \PHPUnit\Framework\TestCase
         $this->expectException(UnknownStepException::class);
         $this->expectExceptionMessage('Unknown step "step_import_name"');
 
-        $dataSetProvider = new EmptyStepProvider();
-        $dataSetProvider->findStep('step_import_name');
+        $provider = new EmptyStepProvider();
+        $provider->findStep('step_import_name');
     }
 }
