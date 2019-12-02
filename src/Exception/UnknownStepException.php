@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace webignition\BasilModelProvider\Exception;
 
 class UnknownStepException extends AbstractUnknownImportException
