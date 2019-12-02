@@ -52,11 +52,11 @@ class StepProviderTest extends \PHPUnit\Framework\TestCase
         $importName = 'step_import_name';
         $step = new Step([], []);
 
-        $stepProvider = new StepProvider([
+        $provider = new StepProvider([
             $importName => $step,
         ]);
 
-        $this->assertSame($step, $stepProvider->findStep($importName));
+        $this->assertSame($step, $provider->findStep($importName));
     }
 
     public function testFindStepThrowsUnknownStepException()
@@ -64,7 +64,7 @@ class StepProviderTest extends \PHPUnit\Framework\TestCase
         $this->expectException(UnknownStepException::class);
         $this->expectExceptionMessage('Unknown step "step_import_name"');
 
-        $dataSetProvider = new StepProvider([]);
-        $dataSetProvider->findStep('step_import_name');
+        $provider = new StepProvider([]);
+        $provider->findStep('step_import_name');
     }
 }

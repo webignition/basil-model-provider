@@ -14,7 +14,7 @@ class EmptyPageProviderTest extends \PHPUnit\Framework\TestCase
         $this->expectException(UnknownPageException::class);
         $this->expectExceptionMessage('Unknown page "page_import_name"');
 
-        $dataSetProvider = new EmptyPageProvider();
-        $dataSetProvider->findPage('page_import_name');
+        $provider = new EmptyPageProvider();
+        $provider->findPage('page_import_name');
     }
 }

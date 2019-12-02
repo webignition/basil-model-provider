@@ -14,7 +14,7 @@ class EmptyDataSetProviderTest extends \PHPUnit\Framework\TestCase
         $this->expectException(UnknownDataProviderException::class);
         $this->expectExceptionMessage('Unknown data provider "data_provider_import_name"');
 
-        $dataSetProvider = new EmptyDataSetProvider();
-        $dataSetProvider->findDataSetCollection('data_provider_import_name');
+        $provider = new EmptyDataSetProvider();
+        $provider->findDataSetCollection('data_provider_import_name');
     }
 }

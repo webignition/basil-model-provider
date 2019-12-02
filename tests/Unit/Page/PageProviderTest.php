@@ -53,11 +53,11 @@ class PageProviderTest extends \PHPUnit\Framework\TestCase
         $importName = 'page_import_name';
         $page = new Page('http://example.com');
 
-        $pageProvider = new PageProvider([
+        $provider = new PageProvider([
             $importName => $page,
         ]);
 
-        $this->assertSame($page, $pageProvider->findPage($importName));
+        $this->assertSame($page, $provider->findPage($importName));
     }
 
     public function testFindPageThrowsUnknownPageException()
@@ -65,7 +65,7 @@ class PageProviderTest extends \PHPUnit\Framework\TestCase
         $this->expectException(UnknownPageException::class);
         $this->expectExceptionMessage('Unknown page "page_import_name"');
 
-        $dataSetProvider = new PageProvider([]);
-        $dataSetProvider->findPage('page_import_name');
+        $provider = new PageProvider([]);
+        $provider->findPage('page_import_name');
     }
 }
