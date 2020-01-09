@@ -1,8 +1,8 @@
 {
-    "name": "webignition/php-basil-model-provider",
+    "name": "webignition/basil-model-provider",
     "description": "Providers for basil models",
     "keywords": [],
-    "homepage": "https://github.com/webignition/php-basil-model-provider",
+    "homepage": "https://github.com/webignition/basil-model-provider",
     "type": "library",
     "license": "MIT",
     "authors": [
