@@ -8,11 +8,15 @@ use webignition\BasilModelProvider\DataSet\DataSetProvider;
 use webignition\BasilModelProvider\DataSet\DataSetProviderInterface;
 use webignition\BasilModelProvider\Exception\UnknownDataProviderException;
 use webignition\BasilModels\DataSet\DataSetCollection;
+use webignition\BasilModels\DataSet\DataSetCollectionInterface;
 
 class DataSetProviderTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @dataProvider createDataProvider
+     *
+     * @param array<string, DataSetCollectionInterface> $dataSetCollections
+     * @param DataSetProviderInterface $expectedDataSetProvider
      */
     public function testCreate(array $dataSetCollections, DataSetProviderInterface $expectedDataSetProvider)
     {

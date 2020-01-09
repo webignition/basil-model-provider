@@ -8,12 +8,14 @@ use webignition\BasilModelProvider\Exception\UnknownPageException;
 use webignition\BasilModelProvider\Page\PageProvider;
 use webignition\BasilModelProvider\Page\PageProviderInterface;
 use webignition\BasilModels\Page\Page;
-use webignition\BasilModels\Step\Step;
 
 class PageProviderTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @dataProvider createDataProvider
+     *
+     * @param array<mixed> $pages
+     * @param PageProviderInterface $expectedPageProvider
      */
     public function testCreate(array $pages, PageProviderInterface $expectedPageProvider)
     {
@@ -37,12 +39,12 @@ class PageProviderTest extends \PHPUnit\Framework\TestCase
             ],
             'valid pages' => [
                 'pages' => [
-                    'step one' => new Step([], []),
-                    'step two' => new Step([], []),
+                    'page one' => new Page('http://example.com/one', []),
+                    'page two' => new Page('http://example.com/two', []),
                 ],
                 'expectedPageProvider' => new PageProvider([
-                    'step one' => new Step([], []),
-                    'step two' => new Step([], []),
+                    'page one' => new Page('http://example.com/one', []),
+                    'page two' => new Page('http://example.com/two', []),
                 ]),
             ],
         ];
