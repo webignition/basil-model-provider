@@ -13,6 +13,9 @@ class StepProviderTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @dataProvider createDataProvider
+     *
+     * @param array<mixed> $steps
+     * @param StepProviderInterface $expectedStepProvider
      */
     public function testCreate(array $steps, StepProviderInterface $expectedStepProvider)
     {

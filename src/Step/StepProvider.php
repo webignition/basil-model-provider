@@ -9,8 +9,14 @@ use webignition\BasilModels\Step\StepInterface;
 
 class StepProvider implements StepProviderInterface
 {
+    /**
+     * @var StepInterface[]
+     */
     private $steps = [];
 
+    /**
+     * @param array<mixed> $steps
+     */
     public function __construct(array $steps)
     {
         foreach ($steps as $importName => $step) {

@@ -12,10 +12,13 @@ class IdentifierProviderTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @dataProvider createDataProvider
+     *
+     * @param array<string, string> $identifiers
+     * @param IdentifierProviderInterface $expectedIdentifierProvider
      */
-    public function testCreate(array $steps, IdentifierProviderInterface $expectedIdentifierProvider)
+    public function testCreate(array $identifiers, IdentifierProviderInterface $expectedIdentifierProvider)
     {
-        $this->assertEquals($expectedIdentifierProvider, new IdentifierProvider($steps));
+        $this->assertEquals($expectedIdentifierProvider, new IdentifierProvider($identifiers));
     }
 
     public function createDataProvider(): array
