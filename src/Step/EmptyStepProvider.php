@@ -11,14 +11,14 @@ use webignition\BasilModels\Step\StepInterface;
 class EmptyStepProvider implements ProviderInterface
 {
     /**
-     * @param string $importName
+     * @param string $name
      *
      * @return StepInterface
      *
      * @throws UnknownItemException
      */
-    public function find(string $importName): StepInterface
+    public function find(string $name): StepInterface
     {
-        throw new UnknownItemException(UnknownItemException::TYPE_STEP, $importName);
+        throw new UnknownItemException(UnknownItemException::TYPE_STEP, $name);
     }
 }

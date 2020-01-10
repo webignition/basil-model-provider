@@ -13,16 +13,16 @@ class DataSetProvider implements ProviderInterface
     /**
      * @var DataSetCollectionInterface[]
      */
-    private $dataSetCollections = [];
+    private $items = [];
 
     /**
      * @param array<mixed> $dataSetCollections
      */
     public function __construct(array $dataSetCollections)
     {
-        foreach ($dataSetCollections as $importName => $dataSetCollection) {
+        foreach ($dataSetCollections as $name => $dataSetCollection) {
             if ($dataSetCollection instanceof DataSetCollectionInterface) {
-                $this->dataSetCollections[$importName] = $dataSetCollection;
+                $this->items[$name] = $dataSetCollection;
             }
         }
     }
@@ -36,7 +36,7 @@ class DataSetProvider implements ProviderInterface
      */
     public function find(string $name): DataSetCollectionInterface
     {
-        $dataSetCollection = $this->dataSetCollections[$name] ?? null;
+        $dataSetCollection = $this->items[$name] ?? null;
 
         if (null === $dataSetCollection) {
             throw new UnknownItemException(UnknownItemException::TYPE_DATASET, $name);

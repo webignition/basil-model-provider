@@ -13,7 +13,7 @@ class PageProvider implements ProviderInterface
     /**
      * @var PageInterface[]
      */
-    private $pages = [];
+    private $items = [];
 
     /**
      * @param array<mixed> $pages
@@ -22,7 +22,7 @@ class PageProvider implements ProviderInterface
     {
         foreach ($pages as $importName => $page) {
             if ($page instanceof PageInterface) {
-                $this->pages[$importName] = $page;
+                $this->items[$importName] = $page;
             }
         }
     }
@@ -36,7 +36,7 @@ class PageProvider implements ProviderInterface
      */
     public function find(string $name): PageInterface
     {
-        $page = $this->pages[$name] ?? null;
+        $page = $this->items[$name] ?? null;
 
         if (null === $page) {
             throw new UnknownItemException(UnknownItemException::TYPE_PAGE, $name);

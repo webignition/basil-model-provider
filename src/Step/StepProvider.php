@@ -13,33 +13,33 @@ class StepProvider implements ProviderInterface
     /**
      * @var StepInterface[]
      */
-    private $steps = [];
+    private $items = [];
 
     /**
      * @param array<mixed> $steps
      */
     public function __construct(array $steps)
     {
-        foreach ($steps as $importName => $step) {
+        foreach ($steps as $name => $step) {
             if ($step instanceof StepInterface) {
-                $this->steps[$importName] = $step;
+                $this->items[$name] = $step;
             }
         }
     }
 
     /**
-     * @param string $importName
+     * @param string $name
      *
      * @return StepInterface
      *
      * @throws UnknownItemException
      */
-    public function find(string $importName): StepInterface
+    public function find(string $name): StepInterface
     {
-        $step = $this->steps[$importName] ?? null;
+        $step = $this->items[$name] ?? null;
 
         if (null === $step) {
-            throw new UnknownItemException(UnknownItemException::TYPE_STEP, $importName);
+            throw new UnknownItemException(UnknownItemException::TYPE_STEP, $name);
         }
 
         return $step;

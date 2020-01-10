@@ -12,7 +12,7 @@ class IdentifierProvider implements ProviderInterface
     /**
      * @var string[]
      */
-    private $identifiers = [];
+    private $items = [];
 
     /**
      * @param string[] $identifiers
@@ -21,7 +21,7 @@ class IdentifierProvider implements ProviderInterface
     {
         foreach ($identifiers as $name => $identifier) {
             if (is_string($identifier)) {
-                $this->identifiers[$name] = $identifier;
+                $this->items[$name] = $identifier;
             }
         }
     }
@@ -35,7 +35,7 @@ class IdentifierProvider implements ProviderInterface
      */
     public function find(string $name): string
     {
-        $identifier = $this->identifiers[$name] ?? null;
+        $identifier = $this->items[$name] ?? null;
 
         if (null === $identifier) {
             throw new UnknownItemException(UnknownItemException::TYPE_IDENTIFIER, $name);
