@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace webignition\BasilModelProvider\Identifier;
 
-use webignition\BasilModelProvider\Exception\UnknownIdentifierException;
+use webignition\BasilModelProvider\Exception\UnknownItemException;
 
 interface IdentifierProviderInterface
 {
@@ -13,7 +13,7 @@ interface IdentifierProviderInterface
      *
      * @return string
      *
-     * @throws UnknownIdentifierException
+     * @throws UnknownItemException
      */
     public function findIdentifier(string $name): string;
 }

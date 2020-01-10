@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace webignition\BasilModelProvider\DataSet;
 
 use webignition\BasilModelProvider\Exception\UnknownDataProviderException;
+use webignition\BasilModelProvider\Exception\UnknownItemException;
 use webignition\BasilModels\DataSet\DataSetCollectionInterface;
 
 class EmptyDataSetProvider implements DataSetProviderInterface
@@ -14,10 +15,10 @@ class EmptyDataSetProvider implements DataSetProviderInterface
      *
      * @return DataSetCollectionInterface
      *
-     * @throws UnknownDataProviderException
+     * @throws UnknownItemException
      */
     public function findDataSetCollection(string $importName): DataSetCollectionInterface
     {
-        throw new UnknownDataProviderException($importName);
+        throw new UnknownItemException(UnknownItemException::TYPE_DATASET, $importName);
     }
 }

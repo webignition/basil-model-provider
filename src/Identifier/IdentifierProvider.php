@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace webignition\BasilModelProvider\Identifier;
 
-use webignition\BasilModelProvider\Exception\UnknownIdentifierException;
+use webignition\BasilModelProvider\Exception\UnknownItemException;
 
 class IdentifierProvider implements IdentifierProviderInterface
 {
@@ -30,14 +30,14 @@ class IdentifierProvider implements IdentifierProviderInterface
      *
      * @return string
      *
-     * @throws UnknownIdentifierException
+     * @throws UnknownItemException
      */
     public function findIdentifier(string $name): string
     {
         $identifier = $this->identifiers[$name] ?? null;
 
         if (null === $identifier) {
-            throw new UnknownIdentifierException($name);
+            throw new UnknownItemException(UnknownItemException::TYPE_IDENTIFIER, $name);
         }
 
         return $identifier;
