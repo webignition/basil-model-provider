@@ -9,12 +9,12 @@ use webignition\BasilModelProvider\Step\EmptyStepProvider;
 
 class EmptyStepProviderTest extends \PHPUnit\Framework\TestCase
 {
-    public function testFindStepThrowsUnknownItemException()
+    public function testFindThrowsUnknownItemException()
     {
         $this->expectException(UnknownItemException::class);
         $this->expectExceptionMessage('Unknown step "step_import_name"');
 
         $provider = new EmptyStepProvider();
-        $provider->findStep('step_import_name');
+        $provider->find('step_import_name');
     }
 }

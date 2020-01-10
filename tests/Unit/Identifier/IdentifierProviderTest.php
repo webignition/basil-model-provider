@@ -6,7 +6,6 @@ namespace webignition\BasilModelProvider\Tests\Unit\Identifier;
 
 use webignition\BasilModelProvider\Exception\UnknownItemException;
 use webignition\BasilModelProvider\Identifier\IdentifierProvider;
-use webignition\BasilModelProvider\Identifier\IdentifierProviderInterface;
 
 class IdentifierProviderTest extends \PHPUnit\Framework\TestCase
 {
@@ -14,9 +13,9 @@ class IdentifierProviderTest extends \PHPUnit\Framework\TestCase
      * @dataProvider createDataProvider
      *
      * @param array<string, string> $identifiers
-     * @param IdentifierProviderInterface $expectedIdentifierProvider
+     * @param IdentifierProvider $expectedIdentifierProvider
      */
-    public function testCreate(array $identifiers, IdentifierProviderInterface $expectedIdentifierProvider)
+    public function testCreate(array $identifiers, IdentifierProvider $expectedIdentifierProvider)
     {
         $this->assertEquals($expectedIdentifierProvider, new IdentifierProvider($identifiers));
     }
@@ -49,7 +48,7 @@ class IdentifierProviderTest extends \PHPUnit\Framework\TestCase
         ];
     }
 
-    public function testFindIdentifier()
+    public function testFind()
     {
         $name = 'name';
         $identifier = '.selector';
@@ -58,15 +57,15 @@ class IdentifierProviderTest extends \PHPUnit\Framework\TestCase
             $name => $identifier,
         ]);
 
-        $this->assertSame($identifier, $identifierProvider->findIdentifier($name));
+        $this->assertSame($identifier, $identifierProvider->find($name));
     }
 
-    public function testFindStepThrowsUnknownItemException()
+    public function testFindThrowsUnknownItemException()
     {
         $this->expectException(UnknownItemException::class);
         $this->expectExceptionMessage('Unknown identifier "name"');
 
         $provider = new IdentifierProvider([]);
-        $provider->findIdentifier('name');
+        $provider->find('name');
     }
 }
