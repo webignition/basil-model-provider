@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace webignition\BasilModelProvider\Tests\Unit\Step;
 
-use webignition\BasilModelProvider\Exception\UnknownStepException;
+use webignition\BasilModelProvider\Exception\UnknownItemException;
 use webignition\BasilModelProvider\Step\StepProvider;
 use webignition\BasilModelProvider\Step\StepProviderInterface;
 use webignition\BasilModels\Step\Step;
@@ -62,9 +62,9 @@ class StepProviderTest extends \PHPUnit\Framework\TestCase
         $this->assertSame($step, $provider->findStep($importName));
     }
 
-    public function testFindStepThrowsUnknownStepException()
+    public function testFindStepThrowsUnknownItemException()
     {
-        $this->expectException(UnknownStepException::class);
+        $this->expectException(UnknownItemException::class);
         $this->expectExceptionMessage('Unknown step "step_import_name"');
 
         $provider = new StepProvider([]);

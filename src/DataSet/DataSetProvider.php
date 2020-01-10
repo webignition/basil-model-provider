@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace webignition\BasilModelProvider\DataSet;
 
-use webignition\BasilModelProvider\Exception\UnknownDataProviderException;
+use webignition\BasilModelProvider\Exception\UnknownItemException;
 use webignition\BasilModels\DataSet\DataSetCollectionInterface;
 
 class DataSetProvider implements DataSetProviderInterface
@@ -31,14 +31,14 @@ class DataSetProvider implements DataSetProviderInterface
      *
      * @return DataSetCollectionInterface
      *
-     * @throws UnknownDataProviderException
+     * @throws UnknownItemException
      */
     public function findDataSetCollection(string $importName): DataSetCollectionInterface
     {
         $dataSetCollection = $this->dataSetCollections[$importName] ?? null;
 
         if (null === $dataSetCollection) {
-            throw new UnknownDataProviderException($importName);
+            throw new UnknownItemException(UnknownItemException::TYPE_DATASET, $importName);
         }
 
         return $dataSetCollection;

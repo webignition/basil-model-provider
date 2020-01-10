@@ -5,14 +5,14 @@ declare(strict_types=1);
 namespace webignition\BasilModelProvider\Tests\Unit\DataSet;
 
 use webignition\BasilModelProvider\DataSet\EmptyDataSetProvider;
-use webignition\BasilModelProvider\Exception\UnknownDataProviderException;
+use webignition\BasilModelProvider\Exception\UnknownItemException;
 
 class EmptyDataSetProviderTest extends \PHPUnit\Framework\TestCase
 {
-    public function testFindDataSetCollectionThrowsUnknownDataProviderException()
+    public function testFindDataSetCollectionThrowsUnknownItemException()
     {
-        $this->expectException(UnknownDataProviderException::class);
-        $this->expectExceptionMessage('Unknown data provider "data_provider_import_name"');
+        $this->expectException(UnknownItemException::class);
+        $this->expectExceptionMessage('Unknown dataset "data_provider_import_name"');
 
         $provider = new EmptyDataSetProvider();
         $provider->findDataSetCollection('data_provider_import_name');

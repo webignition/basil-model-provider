@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace webignition\BasilModelProvider\Page;
 
-use webignition\BasilModelProvider\Exception\UnknownPageException;
+use webignition\BasilModelProvider\Exception\UnknownItemException;
 use webignition\BasilModels\Page\PageInterface;
 
 interface PageProviderInterface
@@ -14,7 +14,7 @@ interface PageProviderInterface
      *
      * @return PageInterface
      *
-     * @throws UnknownPageException
+     * @throws UnknownItemException
      */
     public function findPage(string $importName): PageInterface;
 }

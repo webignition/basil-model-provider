@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace webignition\BasilModelProvider\Tests\Unit\Page;
 
-use webignition\BasilModelProvider\Exception\UnknownPageException;
+use webignition\BasilModelProvider\Exception\UnknownItemException;
 use webignition\BasilModelProvider\Page\PageProvider;
 use webignition\BasilModelProvider\Page\PageProviderInterface;
 use webignition\BasilModels\Page\Page;
@@ -62,9 +62,9 @@ class PageProviderTest extends \PHPUnit\Framework\TestCase
         $this->assertSame($page, $provider->findPage($importName));
     }
 
-    public function testFindPageThrowsUnknownPageException()
+    public function testFindPageThrowsUnknownItemException()
     {
-        $this->expectException(UnknownPageException::class);
+        $this->expectException(UnknownItemException::class);
         $this->expectExceptionMessage('Unknown page "page_import_name"');
 
         $provider = new PageProvider([]);

@@ -6,7 +6,7 @@ namespace webignition\BasilModelProvider\Tests\Unit\DataSet;
 
 use webignition\BasilModelProvider\DataSet\DataSetProvider;
 use webignition\BasilModelProvider\DataSet\DataSetProviderInterface;
-use webignition\BasilModelProvider\Exception\UnknownDataProviderException;
+use webignition\BasilModelProvider\Exception\UnknownItemException;
 use webignition\BasilModels\DataSet\DataSetCollection;
 use webignition\BasilModels\DataSet\DataSetCollectionInterface;
 
@@ -79,10 +79,10 @@ class DataSetProviderTest extends \PHPUnit\Framework\TestCase
         $this->assertSame($dataSetCollection, $provider->findDataSetCollection($importName));
     }
 
-    public function testFindDataSetCollectionThrowsUnknownDataProviderException()
+    public function testFindDataSetCollectionThrowsUnknownItemException()
     {
-        $this->expectException(UnknownDataProviderException::class);
-        $this->expectExceptionMessage('Unknown data provider "data_provider_import_name"');
+        $this->expectException(UnknownItemException::class);
+        $this->expectExceptionMessage('Unknown dataset "data_provider_import_name"');
 
         $provider = new DataSetProvider([]);
         $provider->findDataSetCollection('data_provider_import_name');

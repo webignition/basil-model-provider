@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace webignition\BasilModelProvider\Tests\Unit\Identifier;
 
-use webignition\BasilModelProvider\Exception\UnknownIdentifierException;
+use webignition\BasilModelProvider\Exception\UnknownItemException;
 use webignition\BasilModelProvider\Identifier\IdentifierProvider;
 use webignition\BasilModelProvider\Identifier\IdentifierProviderInterface;
 
@@ -61,10 +61,10 @@ class IdentifierProviderTest extends \PHPUnit\Framework\TestCase
         $this->assertSame($identifier, $identifierProvider->findIdentifier($name));
     }
 
-    public function testFindStepThrowsUnknownIdentifierException()
+    public function testFindStepThrowsUnknownItemException()
     {
-        $this->expectException(UnknownIdentifierException::class);
-        $this->expectExceptionMessage('Unknown identifier with name "name"');
+        $this->expectException(UnknownItemException::class);
+        $this->expectExceptionMessage('Unknown identifier "name"');
 
         $provider = new IdentifierProvider([]);
         $provider->findIdentifier('name');
