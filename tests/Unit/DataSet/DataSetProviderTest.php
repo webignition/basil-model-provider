@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace webignition\BasilModelProvider\Tests\Unit\DataSet;
 
 use webignition\BasilModelProvider\DataSet\DataSetProvider;
-use webignition\BasilModelProvider\DataSet\DataSetProviderInterface;
 use webignition\BasilModelProvider\Exception\UnknownItemException;
 use webignition\BasilModels\DataSet\DataSetCollection;
 use webignition\BasilModels\DataSet\DataSetCollectionInterface;
@@ -16,9 +15,9 @@ class DataSetProviderTest extends \PHPUnit\Framework\TestCase
      * @dataProvider createDataProvider
      *
      * @param array<string, DataSetCollectionInterface> $dataSetCollections
-     * @param DataSetProviderInterface $expectedDataSetProvider
+     * @param DataSetProvider $expectedDataSetProvider
      */
-    public function testCreate(array $dataSetCollections, DataSetProviderInterface $expectedDataSetProvider)
+    public function testCreate(array $dataSetCollections, DataSetProvider $expectedDataSetProvider)
     {
         $this->assertEquals($expectedDataSetProvider, new DataSetProvider($dataSetCollections));
     }
@@ -67,7 +66,7 @@ class DataSetProviderTest extends \PHPUnit\Framework\TestCase
         ];
     }
 
-    public function testFindDataSetCollection()
+    public function testFind()
     {
         $importName = 'data_provider_import_name';
         $dataSetCollection = new DataSetCollection([]);
@@ -76,15 +75,15 @@ class DataSetProviderTest extends \PHPUnit\Framework\TestCase
             $importName => $dataSetCollection,
         ]);
 
-        $this->assertSame($dataSetCollection, $provider->findDataSetCollection($importName));
+        $this->assertSame($dataSetCollection, $provider->find($importName));
     }
 
-    public function testFindDataSetCollectionThrowsUnknownItemException()
+    public function testFindThrowsUnknownItemException()
     {
         $this->expectException(UnknownItemException::class);
         $this->expectExceptionMessage('Unknown dataset "data_provider_import_name"');
 
         $provider = new DataSetProvider([]);
-        $provider->findDataSetCollection('data_provider_import_name');
+        $provider->find('data_provider_import_name');
     }
 }

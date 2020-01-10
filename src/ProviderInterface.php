@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace webignition\BasilModelProvider\Identifier;
+namespace webignition\BasilModelProvider;
 
 use webignition\BasilModelProvider\Exception\UnknownItemException;
 
-interface IdentifierProviderInterface
+interface ProviderInterface
 {
     /**
      * @param string $name
      *
-     * @return string
+     * @return mixed
      *
      * @throws UnknownItemException
      */
-    public function findIdentifier(string $name): string;
+    public function find(string $name);
 }

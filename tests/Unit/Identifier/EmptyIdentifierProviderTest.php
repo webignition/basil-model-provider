@@ -9,12 +9,12 @@ use webignition\BasilModelProvider\Identifier\EmptyIdentifierProvider;
 
 class EmptyIdentifierProviderTest extends \PHPUnit\Framework\TestCase
 {
-    public function testFindStepThrowsUnknownItemException()
+    public function testFindThrowsUnknownItemException()
     {
         $this->expectException(UnknownItemException::class);
         $this->expectExceptionMessage('Unknown identifier "name"');
 
         $provider = new EmptyIdentifierProvider();
-        $provider->findIdentifier('name');
+        $provider->find('name');
     }
 }

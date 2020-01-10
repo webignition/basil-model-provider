@@ -5,14 +5,15 @@ declare(strict_types=1);
 namespace webignition\BasilModelProvider\Page;
 
 use webignition\BasilModelProvider\Exception\UnknownItemException;
+use webignition\BasilModelProvider\ProviderInterface;
 use webignition\BasilModels\Page\PageInterface;
 
-class PageProvider implements PageProviderInterface
+class PageProvider implements ProviderInterface
 {
     /**
      * @var PageInterface[]
      */
-    private $pages = [];
+    private $items = [];
 
     /**
      * @param array<mixed> $pages
@@ -21,24 +22,24 @@ class PageProvider implements PageProviderInterface
     {
         foreach ($pages as $importName => $page) {
             if ($page instanceof PageInterface) {
-                $this->pages[$importName] = $page;
+                $this->items[$importName] = $page;
             }
         }
     }
 
     /**
-     * @param string $importName
+     * @param string $name
      *
      * @return PageInterface
      *
      * @throws UnknownItemException
      */
-    public function findPage(string $importName): PageInterface
+    public function find(string $name): PageInterface
     {
-        $page = $this->pages[$importName] ?? null;
+        $page = $this->items[$name] ?? null;
 
         if (null === $page) {
-            throw new UnknownItemException(UnknownItemException::TYPE_PAGE, $importName);
+            throw new UnknownItemException(UnknownItemException::TYPE_PAGE, $name);
         }
 
         return $page;

@@ -6,7 +6,6 @@ namespace webignition\BasilModelProvider\Tests\Unit\Page;
 
 use webignition\BasilModelProvider\Exception\UnknownItemException;
 use webignition\BasilModelProvider\Page\PageProvider;
-use webignition\BasilModelProvider\Page\PageProviderInterface;
 use webignition\BasilModels\Page\Page;
 
 class PageProviderTest extends \PHPUnit\Framework\TestCase
@@ -15,9 +14,9 @@ class PageProviderTest extends \PHPUnit\Framework\TestCase
      * @dataProvider createDataProvider
      *
      * @param array<mixed> $pages
-     * @param PageProviderInterface $expectedPageProvider
+     * @param PageProvider $expectedPageProvider
      */
-    public function testCreate(array $pages, PageProviderInterface $expectedPageProvider)
+    public function testCreate(array $pages, PageProvider $expectedPageProvider)
     {
         $this->assertEquals($expectedPageProvider, new PageProvider($pages));
     }
@@ -50,7 +49,7 @@ class PageProviderTest extends \PHPUnit\Framework\TestCase
         ];
     }
 
-    public function testFindPage()
+    public function testFind()
     {
         $importName = 'page_import_name';
         $page = new Page('http://example.com');
@@ -59,15 +58,15 @@ class PageProviderTest extends \PHPUnit\Framework\TestCase
             $importName => $page,
         ]);
 
-        $this->assertSame($page, $provider->findPage($importName));
+        $this->assertSame($page, $provider->find($importName));
     }
 
-    public function testFindPageThrowsUnknownItemException()
+    public function testFindThrowsUnknownItemException()
     {
         $this->expectException(UnknownItemException::class);
         $this->expectExceptionMessage('Unknown page "page_import_name"');
 
         $provider = new PageProvider([]);
-        $provider->findPage('page_import_name');
+        $provider->find('page_import_name');
     }
 }
