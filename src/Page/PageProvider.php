@@ -13,7 +13,7 @@ class PageProvider implements ProviderInterface
     /**
      * @var PageInterface[]
      */
-    private $items = [];
+    private array $items = [];
 
     /**
      * @param array<mixed> $pages

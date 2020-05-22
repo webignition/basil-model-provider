@@ -13,7 +13,7 @@ class DataSetProvider implements ProviderInterface
     /**
      * @var DataSetCollectionInterface[]
      */
-    private $items = [];
+    private array $items = [];
 
     /**
      * @param array<mixed> $dataSetCollections

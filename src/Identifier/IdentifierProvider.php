@@ -12,7 +12,7 @@ class IdentifierProvider implements ProviderInterface
     /**
      * @var string[]
      */
-    private $items = [];
+    private array $items = [];
 
     /**
      * @param string[] $identifiers
