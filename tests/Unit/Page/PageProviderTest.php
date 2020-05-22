@@ -38,12 +38,12 @@ class PageProviderTest extends \PHPUnit\Framework\TestCase
             ],
             'valid pages' => [
                 'pages' => [
-                    'page one' => new Page('http://example.com/one', []),
-                    'page two' => new Page('http://example.com/two', []),
+                    'page one' => new Page('', 'http://example.com/one', []),
+                    'page two' => new Page('', 'http://example.com/two', []),
                 ],
                 'expectedPageProvider' => new PageProvider([
-                    'page one' => new Page('http://example.com/one', []),
-                    'page two' => new Page('http://example.com/two', []),
+                    'page one' => new Page('', 'http://example.com/one', []),
+                    'page two' => new Page('', 'http://example.com/two', []),
                 ]),
             ],
         ];
@@ -52,7 +52,7 @@ class PageProviderTest extends \PHPUnit\Framework\TestCase
     public function testFind()
     {
         $importName = 'page_import_name';
-        $page = new Page('http://example.com');
+        $page = new Page($importName, 'http://example.com');
 
         $provider = new PageProvider([
             $importName => $page,
