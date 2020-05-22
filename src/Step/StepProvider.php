@@ -13,7 +13,7 @@ class StepProvider implements ProviderInterface
     /**
      * @var StepInterface[]
      */
-    private $items = [];
+    private array $items = [];
 
     /**
      * @param array<mixed> $steps

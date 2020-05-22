@@ -17,8 +17,8 @@ class UnknownItemException extends \Exception implements ContextAwareExceptionIn
     public const TYPE_PAGE = 'page';
     public const TYPE_STEP = 'step';
 
-    private $type;
-    private $name;
+    private string $type;
+    private string $name;
 
     public function __construct(string $type, string $name)
     {
