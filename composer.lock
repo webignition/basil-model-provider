@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "08cc97a1ebd813deba017db6c5b8741a",
+    "content-hash": "867ca92528170116b61b1281dea6a176",
     "packages": [
         {
             "name": "webignition/basil-models",
-            "version": "0.44",
+            "version": "0.47",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webignition/basil-models.git",
-                "reference": "0c121189767535f6341372b02a29d72dac8ab08d"
+                "reference": "503008bfa1b0775ccbbf3d6ebd5998def4fdfef0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webignition/basil-models/zipball/0c121189767535f6341372b02a29d72dac8ab08d",
-                "reference": "0c121189767535f6341372b02a29d72dac8ab08d",
+                "url": "https://api.github.com/repos/webignition/basil-models/zipball/503008bfa1b0775ccbbf3d6ebd5998def4fdfef0",
+                "reference": "503008bfa1b0775ccbbf3d6ebd5998def4fdfef0",
                 "shasum": ""
             },
             "require": {
@@ -46,28 +46,28 @@
                 }
             ],
             "homepage": "https://github.com/webignition/basil-models",
-            "time": "2020-05-22T14:07:50+00:00"
+            "time": "2020-05-22T16:33:15+00:00"
         },
         {
             "name": "webignition/php-basil-context-aware-exception",
-            "version": "0.1",
+            "version": "0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webignition/php-basil-context-aware-exception.git",
-                "reference": "c1435f31a79191748f90e091775dbb278510ee41"
+                "reference": "0ab78e23ccdeb5ada1a254f2c3510b6726a2329a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webignition/php-basil-context-aware-exception/zipball/c1435f31a79191748f90e091775dbb278510ee41",
-                "reference": "c1435f31a79191748f90e091775dbb278510ee41",
+                "url": "https://api.github.com/repos/webignition/php-basil-context-aware-exception/zipball/0ab78e23ccdeb5ada1a254f2c3510b6726a2329a",
+                "reference": "0ab78e23ccdeb5ada1a254f2c3510b6726a2329a",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.2"
+                "php": ">=7.4"
             },
             "require-dev": {
                 "phpstan/phpstan": "^0.11.5",
-                "phpunit/phpunit": "~8.0",
+                "phpunit/phpunit": "~9",
                 "squizlabs/php_codesniffer": "3.*"
             },
             "type": "library",
@@ -88,7 +88,7 @@
             ],
             "description": "Models for basil language objects",
             "homepage": "https://github.com/webignition/php-basil-context-aware-exception",
-            "time": "2019-07-13T14:46:44+00:00"
+            "time": "2020-05-28T10:45:08+00:00"
         }
     ],
     "packages-dev": [
