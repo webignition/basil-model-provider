@@ -9,7 +9,7 @@ use webignition\BasilModelProvider\Page\EmptyPageProvider;
 
 class EmptyPageProviderTest extends \PHPUnit\Framework\TestCase
 {
-    public function testFindThrowsUnknownItemException()
+    public function testFindThrowsUnknownItemException(): void
     {
         $this->expectException(UnknownItemException::class);
         $this->expectExceptionMessage('Unknown page "page_import_name"');
