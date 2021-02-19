@@ -16,11 +16,14 @@ class PageProviderTest extends \PHPUnit\Framework\TestCase
      * @param array<mixed> $pages
      * @param PageProvider $expectedPageProvider
      */
-    public function testCreate(array $pages, PageProvider $expectedPageProvider)
+    public function testCreate(array $pages, PageProvider $expectedPageProvider): void
     {
         $this->assertEquals($expectedPageProvider, new PageProvider($pages));
     }
 
+    /**
+     * @return array[]
+     */
     public function createDataProvider(): array
     {
         return [
@@ -49,7 +52,7 @@ class PageProviderTest extends \PHPUnit\Framework\TestCase
         ];
     }
 
-    public function testFind()
+    public function testFind(): void
     {
         $importName = 'page_import_name';
         $page = new Page($importName, 'http://example.com');
@@ -61,7 +64,7 @@ class PageProviderTest extends \PHPUnit\Framework\TestCase
         $this->assertSame($page, $provider->find($importName));
     }
 
-    public function testFindThrowsUnknownItemException()
+    public function testFindThrowsUnknownItemException(): void
     {
         $this->expectException(UnknownItemException::class);
         $this->expectExceptionMessage('Unknown page "page_import_name"');

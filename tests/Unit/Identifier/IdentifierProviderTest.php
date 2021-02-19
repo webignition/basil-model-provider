@@ -15,11 +15,14 @@ class IdentifierProviderTest extends \PHPUnit\Framework\TestCase
      * @param array<string, string> $identifiers
      * @param IdentifierProvider $expectedIdentifierProvider
      */
-    public function testCreate(array $identifiers, IdentifierProvider $expectedIdentifierProvider)
+    public function testCreate(array $identifiers, IdentifierProvider $expectedIdentifierProvider): void
     {
         $this->assertEquals($expectedIdentifierProvider, new IdentifierProvider($identifiers));
     }
 
+    /**
+     * @return array[]
+     */
     public function createDataProvider(): array
     {
         return [
@@ -48,7 +51,7 @@ class IdentifierProviderTest extends \PHPUnit\Framework\TestCase
         ];
     }
 
-    public function testFind()
+    public function testFind(): void
     {
         $name = 'name';
         $identifier = '.selector';
@@ -60,7 +63,7 @@ class IdentifierProviderTest extends \PHPUnit\Framework\TestCase
         $this->assertSame($identifier, $identifierProvider->find($name));
     }
 
-    public function testFindThrowsUnknownItemException()
+    public function testFindThrowsUnknownItemException(): void
     {
         $this->expectException(UnknownItemException::class);
         $this->expectExceptionMessage('Unknown identifier "name"');

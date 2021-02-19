@@ -17,11 +17,14 @@ class DataSetProviderTest extends \PHPUnit\Framework\TestCase
      * @param array<string, DataSetCollectionInterface> $dataSetCollections
      * @param DataSetProvider $expectedDataSetProvider
      */
-    public function testCreate(array $dataSetCollections, DataSetProvider $expectedDataSetProvider)
+    public function testCreate(array $dataSetCollections, DataSetProvider $expectedDataSetProvider): void
     {
         $this->assertEquals($expectedDataSetProvider, new DataSetProvider($dataSetCollections));
     }
 
+    /**
+     * @return array[]
+     */
     public function createDataProvider(): array
     {
         return [
@@ -66,7 +69,7 @@ class DataSetProviderTest extends \PHPUnit\Framework\TestCase
         ];
     }
 
-    public function testFind()
+    public function testFind(): void
     {
         $importName = 'data_provider_import_name';
         $dataSetCollection = new DataSetCollection([]);
@@ -78,7 +81,7 @@ class DataSetProviderTest extends \PHPUnit\Framework\TestCase
         $this->assertSame($dataSetCollection, $provider->find($importName));
     }
 
-    public function testFindThrowsUnknownItemException()
+    public function testFindThrowsUnknownItemException(): void
     {
         $this->expectException(UnknownItemException::class);
         $this->expectExceptionMessage('Unknown dataset "data_provider_import_name"');

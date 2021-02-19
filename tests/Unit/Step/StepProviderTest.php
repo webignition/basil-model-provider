@@ -16,11 +16,14 @@ class StepProviderTest extends \PHPUnit\Framework\TestCase
      * @param array<mixed> $steps
      * @param StepProvider $expectedStepProvider
      */
-    public function testCreate(array $steps, StepProvider $expectedStepProvider)
+    public function testCreate(array $steps, StepProvider $expectedStepProvider): void
     {
         $this->assertEquals($expectedStepProvider, new StepProvider($steps));
     }
 
+    /**
+     * @return array[]
+     */
     public function createDataProvider(): array
     {
         return [
@@ -49,7 +52,7 @@ class StepProviderTest extends \PHPUnit\Framework\TestCase
         ];
     }
 
-    public function testFind()
+    public function testFind(): void
     {
         $importName = 'step_import_name';
         $step = new Step([], []);
@@ -61,7 +64,7 @@ class StepProviderTest extends \PHPUnit\Framework\TestCase
         $this->assertSame($step, $provider->find($importName));
     }
 
-    public function testFindThrowsUnknownItemException()
+    public function testFindThrowsUnknownItemException(): void
     {
         $this->expectException(UnknownItemException::class);
         $this->expectExceptionMessage('Unknown step "step_import_name"');

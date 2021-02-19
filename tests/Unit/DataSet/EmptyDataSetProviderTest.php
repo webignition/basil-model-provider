@@ -9,7 +9,7 @@ use webignition\BasilModelProvider\Exception\UnknownItemException;
 
 class EmptyDataSetProviderTest extends \PHPUnit\Framework\TestCase
 {
-    public function testFindThrowsUnknownItemException()
+    public function testFindThrowsUnknownItemException(): void
     {
         $this->expectException(UnknownItemException::class);
         $this->expectExceptionMessage('Unknown dataset "data_provider_import_name"');

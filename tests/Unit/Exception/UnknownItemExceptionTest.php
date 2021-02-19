@@ -8,7 +8,7 @@ use webignition\BasilModelProvider\Exception\UnknownItemException;
 
 class UnknownItemExceptionTest extends \PHPUnit\Framework\TestCase
 {
-    public function testCreate()
+    public function testCreate(): void
     {
         $exception = new UnknownItemException(UnknownItemException::TYPE_DATASET, 'item_name');
 
