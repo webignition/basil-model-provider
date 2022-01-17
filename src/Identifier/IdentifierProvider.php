@@ -27,10 +27,6 @@ class IdentifierProvider implements ProviderInterface
     }
 
     /**
-     * @param string $name
-     *
-     * @return string
-     *
      * @throws UnknownItemException
      */
     public function find(string $name): string

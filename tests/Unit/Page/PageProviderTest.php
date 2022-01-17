@@ -14,7 +14,6 @@ class PageProviderTest extends \PHPUnit\Framework\TestCase
      * @dataProvider createDataProvider
      *
      * @param array<mixed> $pages
-     * @param PageProvider $expectedPageProvider
      */
     public function testCreate(array $pages, PageProvider $expectedPageProvider): void
     {
