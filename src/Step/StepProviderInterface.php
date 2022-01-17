@@ -5,15 +5,13 @@ declare(strict_types=1);
 namespace webignition\BasilModelProvider\Step;
 
 use webignition\BasilModelProvider\Exception\UnknownItemException;
+use webignition\BasilModelProvider\ProviderInterface;
 use webignition\BasilModels\Step\StepInterface;
 
-class EmptyStepProvider implements StepProviderInterface
+interface StepProviderInterface extends ProviderInterface
 {
     /**
      * @throws UnknownItemException
      */
-    public function find(string $name): StepInterface
-    {
-        throw new UnknownItemException(UnknownItemException::TYPE_STEP, $name);
-    }
+    public function find(string $name): StepInterface;
 }

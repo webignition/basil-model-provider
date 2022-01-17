@@ -5,10 +5,9 @@ declare(strict_types=1);
 namespace webignition\BasilModelProvider\DataSet;
 
 use webignition\BasilModelProvider\Exception\UnknownItemException;
-use webignition\BasilModelProvider\ProviderInterface;
 use webignition\BasilModels\DataSet\DataSetCollectionInterface;
 
-class DataSetProvider implements ProviderInterface
+class DataSetProvider implements DataSetProviderInterface
 {
     /**
      * @var DataSetCollectionInterface[]
