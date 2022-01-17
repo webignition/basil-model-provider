@@ -5,10 +5,9 @@ declare(strict_types=1);
 namespace webignition\BasilModelProvider\Page;
 
 use webignition\BasilModelProvider\Exception\UnknownItemException;
-use webignition\BasilModelProvider\ProviderInterface;
 use webignition\BasilModels\Page\PageInterface;
 
-class PageProvider implements ProviderInterface
+class PageProvider implements PageProviderInterface
 {
     /**
      * @var PageInterface[]

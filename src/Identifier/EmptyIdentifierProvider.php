@@ -5,9 +5,8 @@ declare(strict_types=1);
 namespace webignition\BasilModelProvider\Identifier;
 
 use webignition\BasilModelProvider\Exception\UnknownItemException;
-use webignition\BasilModelProvider\ProviderInterface;
 
-class EmptyIdentifierProvider implements ProviderInterface
+class EmptyIdentifierProvider implements IdentifierProviderInterface
 {
     /**
      * @throws UnknownItemException
