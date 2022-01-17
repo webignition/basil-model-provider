@@ -38,9 +38,9 @@
         ]
     },
     "require": {
-        "php": ">=7.4|^8",
-        "webignition/php-basil-context-aware-exception": ">=0.4,<1",
-        "webignition/basil-models": ">=0.58,<1"
+        "php": "^8.0",
+        "webignition/php-basil-context-aware-exception": ">=0.5,<1",
+        "webignition/basil-models": ">=0.60,<1"
     },
     "require-dev": {
         "phpstan/phpstan": "^1.4",
