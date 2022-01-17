@@ -28,10 +28,6 @@ class DataSetProvider implements ProviderInterface
     }
 
     /**
-     * @param string $name
-     *
-     * @return DataSetCollectionInterface
-     *
      * @throws UnknownItemException
      */
     public function find(string $name): DataSetCollectionInterface

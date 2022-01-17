@@ -9,11 +9,9 @@ use webignition\BasilModelProvider\Exception\UnknownItemException;
 interface ProviderInterface
 {
     /**
-     * @param string $name
+     * @throws UnknownItemException
      *
      * @return mixed
-     *
-     * @throws UnknownItemException
      */
     public function find(string $name);
 }

@@ -15,7 +15,6 @@ class DataSetProviderTest extends \PHPUnit\Framework\TestCase
      * @dataProvider createDataProvider
      *
      * @param array<string, DataSetCollectionInterface> $dataSetCollections
-     * @param DataSetProvider $expectedDataSetProvider
      */
     public function testCreate(array $dataSetCollections, DataSetProvider $expectedDataSetProvider): void
     {
@@ -23,7 +22,7 @@ class DataSetProviderTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @return array[]
+     * @return array<mixed>
      */
     public function createDataProvider(): array
     {

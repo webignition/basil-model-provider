@@ -13,7 +13,6 @@ class IdentifierProviderTest extends \PHPUnit\Framework\TestCase
      * @dataProvider createDataProvider
      *
      * @param array<string, string> $identifiers
-     * @param IdentifierProvider $expectedIdentifierProvider
      */
     public function testCreate(array $identifiers, IdentifierProvider $expectedIdentifierProvider): void
     {
@@ -21,7 +20,7 @@ class IdentifierProviderTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @return array[]
+     * @return array<mixed>
      */
     public function createDataProvider(): array
     {

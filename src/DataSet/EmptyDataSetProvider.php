@@ -11,10 +11,6 @@ use webignition\BasilModels\DataSet\DataSetCollectionInterface;
 class EmptyDataSetProvider implements ProviderInterface
 {
     /**
-     * @param string $name
-     *
-     * @return DataSetCollectionInterface
-     *
      * @throws UnknownItemException
      */
     public function find(string $name): DataSetCollectionInterface

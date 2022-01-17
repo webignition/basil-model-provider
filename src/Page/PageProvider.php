@@ -28,10 +28,6 @@ class PageProvider implements ProviderInterface
     }
 
     /**
-     * @param string $name
-     *
-     * @return PageInterface
-     *
      * @throws UnknownItemException
      */
     public function find(string $name): PageInterface

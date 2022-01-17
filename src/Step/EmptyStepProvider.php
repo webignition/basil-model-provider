@@ -11,10 +11,6 @@ use webignition\BasilModels\Step\StepInterface;
 class EmptyStepProvider implements ProviderInterface
 {
     /**
-     * @param string $name
-     *
-     * @return StepInterface
-     *
      * @throws UnknownItemException
      */
     public function find(string $name): StepInterface
